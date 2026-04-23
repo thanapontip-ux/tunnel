@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานข้อเท็จจริง: เหตุหลุมยุบ MRT ถนนสามเสน</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .nav-link.active {
+            background-color: #eff6ff; /* blue-50 */
+            color: #1d4ed8; /* blue-700 */
+        }
+        .nav-link {
+            transition: background-color 0.2s, color 0.2s;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 selection:bg-blue-200">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-blue-700 tracking-tight">MRT FactSheet</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-1" id="nav-menu">
+                    <a href="#causes" class="nav-link active px-4 py-2 rounded-md text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900" data-target="causes">สาเหตุการเกิดหลุมยุบ</a>
+                    <a href="#timeline" class="nav-link px-4 py-2 rounded-md text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900" data-target="timeline">ลำดับเหตุการณ์</a>
+                    <a href="#repairs" class="nav-link px-4 py-2 rounded-md text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900" data-target="repairs">การซ่อมแซม</a>
+                    <a href="#status" class="nav-link px-4 py-2 rounded-md text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900" data-target="status">สถานะปัจจุบัน</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-white border-b border-slate-200 pt-16 pb-12 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-50 opacity-50 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-red-50 opacity-50 blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-red-100 text-red-700 text-xs font-bold tracking-wider mb-4 uppercase">Incident Report</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+                รายงานข้อเท็จจริง: <br class="hidden md:block" /> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600">
+                    เหตุการณ์ถนนสามเสนยุบตัว
+                </span>
+            </h1>
+            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+                สรุปข้อมูลทางวิศวกรรม ลำดับเหตุการณ์ และแผนการแก้ไขปัญหาหลุมยุบขนาดใหญ่ในโครงการรถไฟฟ้า MRT สายสีม่วงใต้
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-slate-600 bg-slate-50 p-4 rounded-xl border border-slate-200 inline-flex shadow-sm">
+                <div class="flex items-center gap-2">
+                    <span class="text-blue-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    </span>
+                    <span>ถนนสามเสน หน้า รพ.วชิรพยาบาล และ สน.สามเสน</span>
+                </div>
+                <div class="hidden sm:block text-slate-300">|</div>
+                <div class="flex items-center gap-2">
+                    <span class="text-blue-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </span>
+                    <span>กันยายน - ตุลาคม 2568 (2025)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- Section 1: Causes -->
+        <section id="causes" class="scroll-mt-24 section-block">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="bg-red-100 p-2 rounded-lg text-red-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">1. สาเหตุทางวิศวกรรมและสภาพแวดล้อม</h2>
+            </div>
+            
+            <div class="prose prose-slate max-w-none prose-p:leading-relaxed prose-headings:text-slate-800">
+                <p class="text-lg text-slate-700 mb-6">
+                    จากการตรวจสอบร่วมกันของ <strong>รฟม.</strong>, <strong>กรุงเทพมหานคร</strong> และผู้เชี่ยวชาญด้านวิศวกรรม พบว่าเหตุการณ์หลุมยุบขนาดใหญ่ (ความกว้าง 30x30 เมตร ลึก 50 เมตร) เกิดจากความล้มเหลวทางโครงสร้างที่ซ้อนทับกัน (Cascading Failure) ดังนี้:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 my-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-blue-500">
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-slate-800">
+                            <span class="bg-blue-100 text-blue-700 w-6 h-6 rounded-full flex items-center justify-center text-sm">1</span>
+                            Omega Joint Failure
+                        </h3>
+                        <p class="text-slate-600 text-sm">จุดอ่อนที่ <strong>"โอเมก้าจอยท์"</strong> ซึ่งเป็นซีลยางสังเคราะห์คล้ายตัวอักษร Ω ทำหน้าที่ป้องกันน้ำบาดาลระหว่างผนังสถานี (Diaphragm Wall) และอุโมงค์เจาะ (TBM)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-red-500">
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-slate-800">
+                            <span class="bg-red-100 text-red-700 w-6 h-6 rounded-full flex items-center justify-center text-sm">2</span>
+                            Excessive Differential Settlement
+                        </h3>
+                        <p class="text-slate-600 text-sm">เกิดการทรุดตัวที่ไม่เท่ากันระหว่างกำแพงสถานีบนดินแข็งและอุโมงค์บนชั้นดินเหนียวอ่อน ทำให้ซีลยางถูกดึงรั้งอย่างรุนแรงจนเกินขีดจำกัด</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-amber-500">
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-slate-800">
+                            <span class="bg-amber-100 text-amber-700 w-6 h-6 rounded-full flex items-center justify-center text-sm">3</span>
+                            Clamping & Installation Flaws
+                        </h3>
+                        <p class="text-slate-600 text-sm">ความคลาดเคลื่อนในการขันประกับน็อต หรือพื้นผิวไม่เรียบ ทำให้เกิดจุดอ่อนแอ (Weak point) บนซีลยาง</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 border-l-4 border-l-cyan-500">
+                        <h3 class="text-xl font-bold mb-3 flex items-center gap-2 text-slate-800">
+                            <span class="bg-cyan-100 text-cyan-700 w-6 h-6 rounded-full flex items-center justify-center text-sm">4</span>
+                            Hydrostatic Wedge Effect
+                        </h3>
+                        <p class="text-slate-600 text-sm">แรงดันน้ำบาดาล 3 บาร์ (30 ตัน/ตร.ม.) ที่ความลึก 30 เมตร ดันแทรกซึมเสมือน "ลิ่ม" จนซีลยางฉีกขาดและเกราะกันน้ำพังทลาย</p>
+                    </div>
+                </div>
+
+                <!-- AI Image Container -->
+                <div class="ai-image-generator flex flex-col items-center w-full my-6" 
+                     data-prompt="An engineering cross-section schematic diagram showing massive high water pressure breaking a black rubber omega-shaped seal between a rigid concrete diaphragm wall and a round subway tunnel underground. Water and sand are flooding into the tunnel. Clean professional engineering illustration."
+                     data-alt="แผนภาพวิศวกรรมแสดงการฉีกขาดของโอเมก้าจอยท์">
+                    <div class="image-box w-full relative bg-slate-100 rounded-xl overflow-hidden shadow-inner flex items-center justify-center min-h-[250px] md:min-h-[400px] border border-slate-200">
+                        <!-- Content injected by JS -->
+                    </div>
+                    <p class="text-sm text-slate-500 mt-3 text-center italic border-l-2 border-blue-400 pl-3">
+                        ภาพจำลอง (AI Generated): กลไกการฉีกขาดของ Omega Joint และการทะลักของน้ำบาดาลเข้าสู่อุโมงค์
+                    </p>
+                </div>
+
+                <div class="bg-slate-100 rounded-2xl p-6 md:p-8 mt-8 border border-slate-200">
+                    <h4 class="font-bold text-lg text-slate-900 mb-4 border-b border-slate-300 pb-2">กระบวนการพังทลายต่อเนื่อง (The Collapse Mechanism)</h4>
+                    <p class="text-slate-700 mb-4">
+                        เมื่อเกราะป้องกันน้ำพังทลาย น้ำบาดาลพุ่งทะลักเข้าอุโมงค์ ทำให้เกิดกระบวนการ <strong>Internal Erosion หรือ Piping</strong> น้ำได้พัดพาทรายและดินเหนียวอ่อนเข้ามาด้วย ก่อให้เกิด <strong>"โพรงดินขนาดใหญ่" (Underground Void)</strong>
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border border-red-200 shadow-sm flex items-start gap-4">
+                        <div class="mt-1 text-red-500">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-red-700 block mb-1">ปัจจัยเร่งปฏิกิริยา (Triggering Event):</span>
+                            <span class="text-sm text-slate-600">เมื่อดินทรุดตัวลง ท่อประปาหลักใต้ถนนเกิดแตก ส่งผลให้น้ำประปาปริมาณมหาศาลพุ่งออกมาชะล้างชั้นดินให้ไหลลงอุโมงค์อย่างรวดเร็ว เกิดเป็นหลุมยุบขนาดยักษ์อย่างฉับพลัน</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Timeline -->
+        <section id="timeline" class="scroll-mt-24 section-block">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="bg-blue-100 p-2 rounded-lg text-blue-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">2. ลำดับเหตุการณ์ (Chronological Timeline)</h2>
+            </div>
+
+            <div class="relative border-l-2 border-slate-200 ml-4 md:ml-6 space-y-8 pb-4">
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[9px] top-1.5 ring-4 ring-white"></div>
+                    <div class="mb-1 text-sm font-bold text-blue-600 uppercase tracking-wide">24 กันยายน 2568</div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+                        <div class="flex gap-4 items-start">
+                            <span class="font-mono font-bold text-slate-500 mt-0.5">06:30</span>
+                            <p class="text-slate-700 text-sm">พบน้ำซึมขึ้นมาบนผิวดินถนนสามเสน และรอยร้าวขนาดเล็ก ตำรวจจราจรเริ่มปิดพื้นที่</p>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <span class="font-mono font-bold text-red-500 mt-0.5">07:13</span>
+                            <p class="text-slate-700 text-sm font-semibold">พื้นผิวถนนเกิดการทรุดตัวฉับพลัน กลายเป็นหลุมยุบขนาดใหญ่ลึกกว่า 50 เมตร หน้า รพ.วชิรพยาบาล</p>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <span class="font-mono font-bold text-slate-500 mt-0.5">07:24</span>
+                            <p class="text-slate-700 text-sm">การทรุดตัวขยายใกล้อาคาร รพ.วชิรพยาบาล ประกาศระงับ OPD และอพยพผู้ป่วยในกว่า 3,500 ราย</p>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <span class="font-mono font-bold text-slate-500 mt-0.5">07:45</span>
+                            <p class="text-slate-700 text-sm">เสาไฟฟ้า 2 ต้น และรถยกของ สน.สามเสน พลัดตกลงหลุม กฟน. ตัดกระแสไฟฟ้าด่วน</p>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <span class="font-mono font-bold text-slate-500 mt-0.5">08:00</span>
+                            <p class="text-slate-700 text-sm">ผู้ว่าฯ ชัชชาติ สิทธิพันธุ์ ลงพื้นที่ตั้งศูนย์บัญชาการเหตุการณ์</p>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <span class="font-mono font-bold text-slate-500 mt-0.5">13:00</span>
+                            <p class="text-slate-700 text-sm">ดินยังทรุดตัวต่อเนื่อง 1-2 เมตร ฐานราก สน.สามเสน เริ่มได้รับผลกระทบ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute w-4 h-4 bg-amber-500 rounded-full -left-[9px] top-1.5 ring-4 ring-white"></div>
+                    <div class="mb-1 text-sm font-bold text-amber-600 uppercase tracking-wide">25 - 26 กันยายน 2568</div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-200">
+                        <p class="text-slate-700 text-sm">รฟม. และบริษัทผู้รับเหมา (CKST-PL Joint Venture) ระงับการก่อสร้างทั้งหมด ทีมกู้ภัยและวิศวกรทำงานตลอด 24 ชั่วโมงเพื่อชะลอการไหลของดินและน้ำ</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute w-4 h-4 bg-red-600 rounded-full -left-[9px] top-1.5 ring-4 ring-white"></div>
+                    <div class="mb-1 text-sm font-bold text-red-600 uppercase tracking-wide">4 ตุลาคม 2568</div>
+                    <div class="bg-red-50 p-5 rounded-2xl shadow-sm border border-red-200">
+                        <p class="text-slate-800 text-sm font-medium">สถานการณ์บานปลาย ทรายที่ถมเริ่มมีรอยร้าว เสาเข็ม สน.สามเสน หัก กทม. และ รฟม. มีมติ <span class="font-bold text-red-700 underline underline-offset-2">รื้อถอนอาคาร สน.สามเสน ด่วน</span> เพื่อป้องกันโดมิโนเอฟเฟกต์</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Image Container -->
+            <div class="ai-image-generator flex flex-col items-center w-full my-6" 
+                 data-prompt="A photorealistic wide angle shot of a massive 30-meter wide sinkhole in the middle of a paved city street in Bangkok. A hospital building is in the background. Emergency barricades and police cars are around the hole. Overcast daytime."
+                 data-alt="ภาพจำลองหลุมยุบขนาดใหญ่บนถนนสามเสน">
+                <div class="image-box w-full relative bg-slate-100 rounded-xl overflow-hidden shadow-inner flex items-center justify-center min-h-[250px] md:min-h-[400px] border border-slate-200">
+                    <!-- Content injected by JS -->
+                </div>
+                <p class="text-sm text-slate-500 mt-3 text-center italic border-l-2 border-blue-400 pl-3">
+                    ภาพจำลอง (AI Generated): หลุมยุบขนาดใหญ่บนถนนสามเสนบริเวณหน้าโรงพยาบาล
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: Repairs -->
+        <section id="repairs" class="scroll-mt-24 section-block">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="bg-emerald-100 p-2 rounded-lg text-emerald-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">3. ขั้นตอนและวิธีการซ่อมแซม</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Method 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">1</div>
+                        <h3 class="font-bold text-slate-800">การควบคุมสถานการณ์ฉุกเฉิน</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 pl-11 leading-relaxed">ตัดระบบสาธารณูปโภค อพยพประชาชนในรัศมีอันตราย และปิดการจราจรถนนสามเสน (แยกวชิรพยาบาลถึงแยกซังฮี้) โดยเด็ดขาด</p>
+                </div>
+                <!-- Method 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">2</div>
+                        <h3 class="font-bold text-slate-800">การอุดรอยรั่ว (Sealing)</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 pl-11 leading-relaxed">ระดมกระสอบทรายกว่า 50,000 ใบ และหินคลุกขนาดใหญ่โยนลงไปเพื่ออุดจุดเชื่อมต่อ ป้องกันน้ำและดินไหลเข้าระบบรถไฟฟ้าเพิ่ม</p>
+                </div>
+                <!-- Method 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">3</div>
+                        <h3 class="font-bold text-slate-800">การลดน้ำหนักกดทับ (Load Reduction)</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 pl-11 leading-relaxed">นำเครื่องจักรเข้ามารื้อถอนอาคาร สน.สามเสน ในส่วนที่เสาเข็มหัก เพื่อลดแรงกดทับบนชั้นดินที่กำลังสูญเสียเสถียรภาพ</p>
+                </div>
+                <!-- Method 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm">4</div>
+                        <h3 class="font-bold text-slate-800">การอัดฉีดเสริมกำลังดิน</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 pl-11 leading-relaxed">เจาะอัดฉีดคอนกรีตแรงดันต่ำ 8 หลุม (ใช้วัสดุกว่า 500 ลบ.ม.) เพื่อเติมโพรงใต้ดิน โดยหลีกเลี่ยงการใช้ PU Foam เพื่อป้องกันแรงดันสร้างความเสียหายเพิ่ม</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Current Status -->
+        <section id="status" class="scroll-mt-24 section-block">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="bg-indigo-100 p-2 rounded-lg text-indigo-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">4. สถานะปัจจุบันและความคืบหน้า</h2>
+                <span class="ml-auto bg-slate-800 text-white text-xs px-3 py-1 rounded-full font-medium tracking-wide">อัปเดต: ต้นปี 2569</span>
+            </div>
+
+            <div class="bg-indigo-50 border border-indigo-100 rounded-3xl p-6 md:p-8 space-y-8">
+                <div>
+                    <h3 class="text-xl font-bold text-indigo-900 mb-3">การรักษาเสถียรภาพพื้นที่สำเร็จ 100%</h3>
+                    <ul class="list-disc pl-5 text-indigo-800/80 space-y-2 text-sm">
+                        <li>หยุดยั้งการทรุดตัวสำเร็จในเดือน ตุลาคม 2568</li>
+                        <li>ใช้เทคโนโลยี <strong>Deep Soil Mixing (DSM)</strong> ผสมซีเมนต์สร้างกำแพงกันดินชั่วคราว</li>
+                        <li>รื้อถอนอาคารที่เหลือด้วย <strong>Remote-controlled Demolition Robots</strong></li>
+                        <li>สแกนพื้นผิวด้วย <strong>GPR (Ground Penetrating Radar)</strong> ทุกสัปดาห์</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <h3 class="text-lg font-bold text-slate-900 mb-3 border-b pb-2">สาเหตุที่ต้องรื้อโครงสร้างเดิม</h3>
+                    <p class="text-sm text-slate-700 leading-relaxed">
+                        การสำรวจด้วยโดรนใต้น้ำพบว่า ชิ้นส่วนอุโมงค์ (Segmental Rings) เกิดการบิดเบี้ยวเกินค่ามาตรฐานความปลอดภัย และสูญเสียความสามารถในการรับแรงอัด รฟม. และ วสท. ลงความเห็นร่วมกันว่า <strong class="text-red-600">"ไม่สามารถกู้คืนหรือซ่อมแซมอุโมงค์เดิมได้"</strong> ต้องรื้อถอนทั้งหมดเพื่อความปลอดภัย
+                    </p>
+                </div>
+
+                <div class="bg-indigo-600 text-white rounded-2xl p-6 md:p-8 shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <span class="bg-white/20 p-2 rounded-lg">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        </span>
+                        แผนการก่อสร้างใหม่: Cut and Cover (Box Structure)
+                    </h3>
+                    <p class="text-indigo-100 text-sm mb-6 leading-relaxed">
+                        เปลี่ยนจากอุโมงค์กลม (Bored Tunnel) ไปใช้ <strong>โครงสร้างสี่เหลี่ยม (Box Structure)</strong> ด้วยวิธีขุดเปิดหน้าดิน โดยตอกกำแพงกันดินลึก 40 เมตร ขุดดินและรื้อเศษอุโมงค์เดิมออกทั้งหมด แล้วเทคอนกรีตสร้างทางวิ่งรูปกล่องสี่เหลี่ยมขึ้นมาใหม่ ก่อนกลบดินคืนสภาพ
+                    </p>
+                    
+                    <div class="grid sm:grid-cols-2 gap-4 bg-indigo-700/50 p-4 rounded-xl">
+                        <div>
+                            <div class="text-indigo-200 text-xs uppercase tracking-wider mb-1">ผลกระทบด้านจราจร</div>
+                            <div class="font-semibold text-sm">ปิดถนนสามเสนเต็มรูปแบบต่ออีก 1 ปีครึ่ง (ทำสะพาน Bailey ให้เฉพาะคนเดินและรถพยาบาล)</div>
+                        </div>
+                        <div>
+                            <div class="text-indigo-200 text-xs uppercase tracking-wider mb-1">กำหนดการใหม่</div>
+                            <div class="font-semibold text-sm">จุดนี้เสร็จ ต.ค. 2570 <br/> เลื่อนเปิดสายสีม่วงใต้เป็น <strong>ปี 2572 (2029)</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Image Container -->
+            <div class="ai-image-generator flex flex-col items-center w-full my-6" 
+                 data-prompt="A bright daytime photorealistic image of a deep urban subway construction site using the 'cut and cover' method. A massive rectangular concrete box structure is being built deep inside a wide open excavated trench. High retaining walls. Cranes and excavators visible. City buildings in the background."
+                 data-alt="ภาพจำลองการก่อสร้างแบบ Cut and Cover">
+                <div class="image-box w-full relative bg-slate-100 rounded-xl overflow-hidden shadow-inner flex items-center justify-center min-h-[250px] md:min-h-[400px] border border-slate-200">
+                    <!-- Content injected by JS -->
+                </div>
+                <p class="text-sm text-slate-500 mt-3 text-center italic border-l-2 border-blue-400 pl-3">
+                    ภาพจำลอง (AI Generated): แผนการก่อสร้างใหม่ด้วยวิธี Cut and Cover (Box Structure)
+                </p>
+            </div>
+
+        </section>
+
+        <!-- References -->
+        <section class="border-t border-slate-200 pt-12 mt-12">
+            <div class="flex items-center gap-2 mb-6 text-slate-800">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+                <h3 class="text-xl font-bold">แหล่งข้อมูลอ้างอิง (Verified Sources)</h3>
+            </div>
+            <ul class="grid gap-3 text-sm text-slate-600">
+                <li class="bg-slate-100/50 p-3 rounded-lg border border-slate-200">
+                    <span class="font-bold text-slate-800">Thai PBS News (23-24 ก.ย. 2568):</span> ข่าว "ถนนทรุดตัว ลึก 50 เมตร หน้า รพ.วชิรพยาบาล เร่งอพยพผู้ป่วย-ชาวบ้าน"
+                </li>
+                <li class="bg-slate-100/50 p-3 rounded-lg border border-slate-200">
+                    <span class="font-bold text-slate-800">Bangkok Post (24-25 ก.ย. 2568):</span> บทความ "Huge subsidence on Samsen Rd in Bangkok"
+                </li>
+                <li class="bg-slate-100/50 p-3 rounded-lg border border-slate-200">
+                    <span class="font-bold text-slate-800">Channel NewsAsia (CNA) (24 ก.ย. 2568):</span> บทความ "Massive sinkhole opens up outside Bangkok hospital"
+                </li>
+                <li class="bg-slate-100/50 p-3 rounded-lg border border-slate-200">
+                    <span class="font-bold text-slate-800">The Nation Thailand (15 ต.ค. 2568):</span> บทความ "MRTA confirms no further subsidence in Purple Line underground tunnel"
+                </li>
+                <li class="bg-slate-100/50 p-3 rounded-lg border border-slate-200">
+                    <span class="font-bold text-slate-800">Post Today (16 ต.ค. 2568):</span> บทความวิเคราะห์ทางวิศวกรรม "รอยแผลลึกของดินยุบ ใต้พื้นสามเสน บทเรียนจากเทคโนโลยีซ่อมยุคใหม่"
+                </li>
+                <li class="bg-slate-100/50 p-3 rounded-lg border border-slate-200">
+                    <span class="font-bold text-slate-800">Daily News (10 ก.พ. 2569):</span> ข่าว "ถนนยุบ 45 เมตรปรับแบบทางวิ่ง ‘สถานีวชิรพยาบาล’ เปิดแผนซ่อมอุโมงค์รถไฟฟ้าม่วงใต้ปิดถนน 1 ปีครึ่ง"
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+        <p>© 2026 Incident Fact Sheet. Compiled strictly from verified reports.</p>
+    </footer>
+
+    <!-- Logic and API Handlers -->
+    <script>
+        // Navigation Logic (Scroll Spy)
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-block');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    // Adjusted for sticky header height
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.target === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // AI Image Generation Logic
+        const apiKey = ""; // Execution environment will inject the key
+
+        const fetchWithRetry = async (url, options, maxRetries = 5) => {
+            const delays = [1000, 2000, 4000, 8000, 16000];
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) return response;
+                    if (i === maxRetries - 1) throw new Error(`HTTP error! status: ${response.status}`);
+                } catch (err) {
+                    if (i === maxRetries - 1) throw err;
+                }
+                await new Promise(resolve => setTimeout(resolve, delays[i]));
+            }
+        };
+
+        const renderLoading = () => `
+            <div class="flex flex-col items-center text-slate-500">
+                <svg class="animate-spin -ml-1 mr-3 h-8 w-8 text-blue-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <p class="text-sm font-medium animate-pulse">กำลังประมวลผลภาพประกอบด้วย AI...</p>
+            </div>
+        `;
+
+        const renderError = (errorMsg, alt) => `
+            <div class="text-slate-400 flex flex-col items-center p-6 text-center">
+                <svg class="w-12 h-12 mb-2 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                <p class="text-sm">${errorMsg}</p>
+                <p class="text-xs mt-1 text-slate-400">(${alt})</p>
+            </div>
+        `;
+
+        const renderImage = (src, alt) => `
+            <img src="${src}" alt="${alt}" class="w-full h-full object-cover transition-opacity duration-500 ease-in-opacity" />
+        `;
+
+        async function processAiImages() {
+            const containers = document.querySelectorAll('.ai-image-generator');
+            
+            for (const container of containers) {
+                const prompt = container.dataset.prompt;
+                const alt = container.dataset.alt;
+                const imageBox = container.querySelector('.image-box');
+
+                if (!apiKey) {
+                    imageBox.innerHTML = renderError("รอการเชื่อมต่อ API เพื่อสร้างภาพ", alt);
+                    continue;
+                }
+
+                // Set Loading State
+                imageBox.innerHTML = renderLoading();
+
+                try {
+                    const payload = {
+                        instances: { prompt: prompt },
+                        parameters: { sampleCount: 1, aspectRatio: "16:9" }
+                    };
+
+                    const response = await fetchWithRetry(
+                        `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`,
+                        {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        }
+                    );
+
+                    const data = await response.json();
+                    
+                    if (data.predictions && data.predictions[0] && data.predictions[0].bytesBase64Encoded) {
+                        const imageSrc = `data:image/png;base64,${data.predictions[0].bytesBase64Encoded}`;
+                        imageBox.innerHTML = renderImage(imageSrc, alt);
+                    } else {
+                        throw new Error('Invalid response format');
+                    }
+                } catch (err) {
+                    console.error("Image generation failed:", err);
+                    imageBox.innerHTML = renderError("ไม่สามารถสร้างภาพประกอบได้ในขณะนี้", alt);
+                }
+            }
+        }
+
+        // Initialize images on load
+        window.addEventListener('load', processAiImages);
+    </script>
+</body>
+</html>
